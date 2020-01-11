@@ -20,8 +20,9 @@
  * - ajouter des controles sur les variables 
  */
  
-#define IN_PIN_RF   2       //17:D3 inter mini32 ou 2 config2
-#define OUT_PIN_CMD 7       //16:D4 led   mini32 ou 7 config2
+#define IN_PIN_RF   17       //17:D3 inter mini32 ou 2 config2
+#define OUT_PIN_CMD 16       //16:D4 led   mini32 ou 7 config2
+#define INTERNAL_LED 22      //pin 22 internal led esp32 mini32 board (inverted)
 #define DUREE_PULSE 50      //ms
 #define DUREE_DEBOUNCE 200  //ms
 
@@ -36,6 +37,7 @@ ____   ____            .__      ___.   .__
  */
 int flip  = 0;
 int etatrf = 0;
+int activ_int_led_debug=1;
 
 
 /*
@@ -55,6 +57,13 @@ void setup() {
   //initalisation pin SORTIE
   pinMode(OUT_PIN_CMD, OUTPUT);
   digitalWrite(OUT_PIN_CMD, LOW);
+
+  //initalisation pin SORTIE LED INTERNE (INVERSE)
+  if(activ_int_led_debug==1)
+  {
+  pinMode(INTERNAL_LED, OUTPUT);
+  digitalWrite(INTERNAL_LED, HIGH);
+  }
 
   //Initalisation port COM
   Serial.begin(115200);
@@ -97,9 +106,12 @@ void loop() {
 
     //generation du pulse
     digitalWrite(OUT_PIN_CMD, HIGH);
+    if(activ_int_led_debug==1){digitalWrite(INTERNAL_LED, LOW);}
+
     delay(DUREE_PULSE);  //en ms
     digitalWrite(OUT_PIN_CMD, LOW);
     delay(DUREE_DEBOUNCE);  //en ms
+    if(activ_int_led_debug==1){digitalWrite(INTERNAL_LED, HIGH);}
   }
 
   //gestion pulse ouverture contact
@@ -113,8 +125,10 @@ void loop() {
 
     //generation du pulse
     digitalWrite(OUT_PIN_CMD, HIGH);
+    if(activ_int_led_debug==1){digitalWrite(INTERNAL_LED, LOW);}
     delay(DUREE_PULSE);  //en ms
     digitalWrite(OUT_PIN_CMD, LOW);
+    if(activ_int_led_debug==1){digitalWrite(INTERNAL_LED, HIGH);}
     delay(DUREE_DEBOUNCE);  //en ms
   }
 }  //end LOOP
