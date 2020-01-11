@@ -1,5 +1,5 @@
 # arduino_pulse_switch
-Generate pulse when switch commute ON or OFF.
+Arduino code for generate pulse when switch commute ON or OFF.
 
 # information connection dev board ESP32 mini32
 ## INPUT OUTPUT
