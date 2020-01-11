@@ -9,9 +9,9 @@ For the configuration we can connect these wires :
  
 WARNING : **There are in inversion between D3 and D4 between the image on the esp32 mini32 and the datasheet.**
 
-![Top view board esp32 mini32 ](https://github.com/sulpub/Jetson_nano/blob/master/images/Jetson_nano_top_board_view.JPG)
+![Top view board esp32 mini32 ](images/esp32_mini32_dev_board.jpg)
 
-![datasheet esp32 mini32 ](https://github.com/sulpub/Jetson_nano/blob/master/images/Jetson_nano_top_board_view.JPG)
+![datasheet esp32 mini32 ](datasheets/Schematic_esp32_mini32_V1.3.pdf)
 
 
 # Test code
@@ -19,8 +19,8 @@ WARNING : **There are in inversion between D3 and D4 between the image on the es
 For this test, we connect a wire on D3 (GPIO 17) and swith GND or disconnect for emulate the switch.
 For observe the output, we connect a led on D4 (GPIO 16) and observe pulse light when we connect and disconnect the wire on D3.
 
-![Top view board esp32 mini32 ](https://github.com/sulpub/Jetson_nano/blob/master/images/Jetson_nano_top_board_view.JPG)
+![Board view when no switch](images/esp32_mini32_led_out_off_no_switch_commute.jpg)
 
-![Top view board esp32 mini32 ](https://github.com/sulpub/Jetson_nano/blob/master/images/Jetson_nano_top_board_view.JPG)
+![Board view when switch on or off](images/esp32_mini32_led_out_on_switch_commute.jpg)
 
-![Message on the uart windows ](https://github.com/sulpub/Jetson_nano/blob/master/images/Jetson_nano_top_board_view.JPG)
+![Message on the uart windows when switch on or off](images/image1_uart.JPG)
