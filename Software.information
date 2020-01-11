@@ -1,0 +1,11 @@
+name=arduino_pulse_switch
+version=1.0.0
+Date=11/01/2020
+author=Sully
+Environment=Arduino
+maintainer=Sully <sulpub>
+sentence=Generate pulse when switch commute ON or OFF
+category=IO input and ouput
+url=https://github.com/sulpub/arduino_pulse_switch.git
+architectures=Arduino board, ESP32, ESP8266
+Keywords=PULSE, UART
